@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="fg" maxHeight="600.0" maxWidth="1200.0" prefHeight="600.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.MainWinController">
+   <children>
+      <ImageView fitHeight="600.0" fitWidth="1200.0" opacity="0.67" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Resources/sfg.jpg" />
+         </image>
+      </ImageView>
+      <AnchorPane id="sfg" fx:id="container" layoutX="10.0" layoutY="10.0" prefHeight="669.0" prefWidth="1514.0" stylesheets="@../application/application.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <AnchorPane opacity="0.85" prefHeight="200.0" prefWidth="250.0" style="-fx-background-color: #eeeeee; -fx-border-width: 0 2 0 0; -fx-border-color: #dddddd;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <AnchorPane prefHeight="180.0" prefWidth="200.0" style="-fx-border-color: #dddddd; -fx-border-width: 0 0 2 0;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Label layoutX="14.0" layoutY="71.0" text="Longitude :">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="22.0" layoutY="103.0" text="Lattitude :">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="longi_field" layoutX="89.0" layoutY="68.0" prefHeight="25.0" prefWidth="138.0" />
+                        <TextField fx:id="latt_field" layoutX="89.0" layoutY="100.0" prefHeight="25.0" prefWidth="138.0" />
+                        <JFXButton fx:id="add_well" layoutX="161.0" layoutY="134.0" onAction="#new_well" style="-fx-background-color: #cccccc;" text="Add well">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </JFXButton>
+                        <Label layoutX="19.0" layoutY="34.0" text="Well position">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="180.0">
+                     <children>
+                        <Label layoutX="21.0" layoutY="19.0" text="Wells:">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <ScrollPane hbarPolicy="NEVER" layoutY="49.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0">
+                          <content>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefWidth="250.0">
+                                 <children>
+                                    <VBox fx:id="wells_container" prefHeight="200.0" prefWidth="100.0" spacing="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <padding>
+                                          <Insets top="5.0" />
+                                       </padding></VBox>
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                        </ScrollPane>
+                        <JFXButton fx:id="manifold_place" layoutX="10.0" layoutY="376.0" onAction="#show_manifold" prefHeight="30.0" prefWidth="229.0" style="-fx-background-color: #6b8fb5;" text="Place Manifold" textFill="WHITE" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="9.0">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </JFXButton>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="10.0" layoutY="10.0" opacity="0.85" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #eeeeee; -fx-border-width: 0 0 0 2; -fx-border-color: #dddddd;" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <VBox fx:id="bests_container" prefHeight="200.0" prefWidth="100.0" spacing="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="100.0">
+                     <padding>
+                        <Insets left="5.0" />
+                     </padding></VBox>
+                  <Label layoutX="18.0" layoutY="66.0" text="Best Manifold positions">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+               </children></AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
